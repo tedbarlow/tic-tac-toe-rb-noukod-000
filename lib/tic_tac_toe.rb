@@ -11,7 +11,11 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
+<<<<<<< HEAD
     move(board, index, a_value)
+=======
+    move(board, index, a_value = "X")
+>>>>>>> 4df41e3a77420bac220768ce341a59b3a3e06c17
     display_board(board)
   else
     turn(board)
@@ -23,7 +27,11 @@ def input_to_index(user_input)
   return user_input.to_i - 1
 end
 
+<<<<<<< HEAD
 def move(board, user_index, a_value = "X")
+=======
+def move(board, user_index, a_value)
+>>>>>>> 4df41e3a77420bac220768ce341a59b3a3e06c17
   board[user_index] = a_value
 end
 
@@ -37,7 +45,6 @@ def position_taken?(board, index)
 end
 
 def play(board)
-
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
@@ -50,6 +57,10 @@ def play(board)
     if over?(board)
       puts "Game is over"
     end
+  loop_counter = 1
+  while loop_counter <= 9
+    turn(board)
+    loop_counter += 1
   end
 end
 
